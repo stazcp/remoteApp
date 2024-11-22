@@ -14,14 +14,15 @@ export default defineConfig({
       filename: 'remoteApp.js',
       exposes: {
         './App': './src/App.tsx',
+        './Image': './src/components/imgChart.png',
       },
-      remotes: {
-        remoteChart: {
-          type: 'module',
-          name: 'remoteChart',
-          entry: 'http://localhost:5173/remoteChart.js',
-        },
-      },
+      // remotes: {
+      //   remoteChart: {
+      //     type: 'module',
+      //     name: 'remoteChart',
+      //     entry: 'http://localhost:5173/remoteChart.js',
+      //   },
+      // },
       shared: {
         react: {
           requiredVersion: '^18.3.1',
