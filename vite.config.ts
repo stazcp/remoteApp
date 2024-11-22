@@ -26,6 +26,7 @@ export default defineConfig({
           singleton: true,
         },
       },
+      manifest: true,
     }),
   ],
 })
