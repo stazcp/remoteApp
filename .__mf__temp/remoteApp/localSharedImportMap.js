@@ -70,6 +70,13 @@
         
     }
       const usedRemotes = [
+                {
+                  entryGlobalName: "remoteChart",
+                  name: "remoteChart",
+                  type: "module",
+                  entry: "http://localhost:5173/remoteChart.js",
+                }
+          
       ]
       export {
         usedShared,

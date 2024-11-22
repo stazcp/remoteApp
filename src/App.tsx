@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Header } from './components/Header'
 import { MortgageStats } from './components/MortgageStats'
 import { MortgageTable } from './components/MortgageTable'
+import DashedLineChart from './components/Chart'
+import './index.css'
+import imgChart from './components/imgChart.png'
+
+// const Remote = lazy(async () => import('remoteChart/Chart'))
 
 function App() {
   return (
@@ -19,7 +24,13 @@ function App() {
         <MortgageStats />
         <MortgageTable />
       </main>
-
+      <div className="my-8">
+        <img src={imgChart} alt="Chart" className="w-full h-auto" />
+      </div>
+      {/* <DashedLineChart /> */}
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <Remote />
+      </Suspense> */}
       <footer className="bg-gray-800 border-t border-gray-700 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="text-center text-gray-400 text-sm">

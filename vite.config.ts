@@ -10,12 +10,18 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      filename: 'remoteApp.js',
       name: 'remoteApp',
+      filename: 'remoteApp.js',
       exposes: {
         './App': './src/App.tsx',
       },
-      remotes: {},
+      remotes: {
+        remoteChart: {
+          type: 'module',
+          name: 'remoteChart',
+          entry: 'http://localhost:5173/remoteChart.js',
+        },
+      },
       shared: {
         react: {
           requiredVersion: '^18.3.1',
@@ -26,7 +32,6 @@ export default defineConfig({
           singleton: true,
         },
       },
-      manifest: true,
     }),
   ],
 })
